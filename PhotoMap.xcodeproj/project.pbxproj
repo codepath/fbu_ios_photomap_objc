@@ -16,6 +16,7 @@
 		6A22E5F720F2A4790052F3C6 /* LocationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A22E5F620F2A4790052F3C6 /* LocationCell.m */; };
 		6A22E5FB20F2A4A00052F3C6 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A22E5FA20F2A4A00052F3C6 /* LocationsViewController.m */; };
 		6A22E5FE20F2A4AE0052F3C6 /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A22E5FD20F2A4AE0052F3C6 /* FullImageViewController.m */; };
+		6A22E60020F2D7E20052F3C6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A22E5FF20F2D7E20052F3C6 /* MapKit.framework */; };
 		A81105B65E41CA038B04C843 /* libPods-PhotoMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CBCF83EE4466FF76810F69 /* libPods-PhotoMap.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		6A22E5FA20F2A4A00052F3C6 /* LocationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationsViewController.m; sourceTree = "<group>"; };
 		6A22E5FC20F2A4AE0052F3C6 /* FullImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
 		6A22E5FD20F2A4AE0052F3C6 /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
+		6A22E5FF20F2D7E20052F3C6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B7CBCF83EE4466FF76810F69 /* libPods-PhotoMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -46,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A22E60020F2D7E20052F3C6 /* MapKit.framework in Frameworks */,
 				A81105B65E41CA038B04C843 /* libPods-PhotoMap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +124,7 @@
 		A8401941145BC10DCBD077EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6A22E5FF20F2D7E20052F3C6 /* MapKit.framework */,
 				B7CBCF83EE4466FF76810F69 /* libPods-PhotoMap.a */,
 			);
 			name = Frameworks;
