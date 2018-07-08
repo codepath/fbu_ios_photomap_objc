@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  FullImageViewController.h
 //  PhotoMap
 //
 //  Created by emersonmalca on 7/8/18.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface FullImageViewController : UIViewController
 
 @end
-
