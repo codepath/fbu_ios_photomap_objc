@@ -24,6 +24,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLr-qJ-Qrd">
                                 <rect key="frame" x="155" y="565" width="64" height="64"/>
                                 <state key="normal" image="camera"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OgQ-iB-30a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -48,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="1005.6" y="-564.46776611694156"/>
         </scene>
-        <!--Locations View Controller-->
+        <!--Add location-->
         <scene sceneID="Djr-iU-KIi">
             <objects>
-                <viewController id="Fvc-Fc-ega" customClass="LocationsViewController" sceneMemberID="viewController">
+                <viewController title="Add location" id="Fvc-Fc-ega" customClass="LocationsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="koW-ON-xDz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -131,10 +134,10 @@
             </objects>
             <point key="canvasLocation" x="1874.4000000000001" y="-572.56371814092961"/>
         </scene>
-        <!--Full Image View Controller-->
+        <!--Full image-->
         <scene sceneID="Qsj-fY-ewc">
             <objects>
-                <viewController id="dhm-cj-dCe" customClass="FullImageViewController" sceneMemberID="viewController">
+                <viewController title="Full image" id="dhm-cj-dCe" customClass="FullImageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uHI-gZ-cxA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
