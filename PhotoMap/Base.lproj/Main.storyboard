@@ -141,13 +141,34 @@
                     <view key="view" contentMode="scaleToFill" id="uHI-gZ-cxA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" maximumZoomScale="2" translatesAutoresizingMaskIntoConstraints="NO" id="Mde-dC-KhA">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBP-Xg-uuF">
+                                        <rect key="frame" x="0.0" y="-64" width="375" height="667"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mde-dC-KhA" firstAttribute="top" secondItem="uHI-gZ-cxA" secondAttribute="top" id="Fia-u9-P5Z"/>
+                            <constraint firstItem="Mde-dC-KhA" firstAttribute="leading" secondItem="iB2-E3-wo8" secondAttribute="leading" id="R0s-oU-Vsj"/>
+                            <constraint firstItem="Mde-dC-KhA" firstAttribute="bottom" secondItem="iB2-E3-wo8" secondAttribute="bottom" id="aOd-lk-ymR"/>
+                            <constraint firstItem="Mde-dC-KhA" firstAttribute="trailing" secondItem="iB2-E3-wo8" secondAttribute="trailing" id="kz3-Dm-AcE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="iB2-E3-wo8"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="UBP-Xg-uuF" id="LHF-dw-ySy"/>
+                        <outlet property="scrollView" destination="Mde-dC-KhA" id="gq2-wo-m6N"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tbn-XH-4D4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="188"/>
+            <point key="canvasLocation" x="1005.6" y="187.55622188905548"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C6y-uv-5cj">

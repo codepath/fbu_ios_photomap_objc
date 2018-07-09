@@ -10,4 +10,6 @@
 
 @interface FullImageViewController : UIViewController
 
+@property (strong, nonatomic) UIImage *photo;
+
 @end

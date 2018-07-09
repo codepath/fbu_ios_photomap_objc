@@ -9,6 +9,7 @@
 #import "PhotoMapViewController.h"
 #import "LocationsViewController.h"
 #import "PhotoAnnotation.h"
+#import "FullImageViewController.h"
 @import MapKit;
 
 @interface PhotoMapViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationsViewControllerDelegate, MKMapViewDelegate>
@@ -76,6 +77,12 @@
     if ([segue.identifier isEqualToString:@"tagSegue"]) {
         LocationsViewController *controller = [segue destinationViewController];
         controller.delegate = self;
+        
+    } else if ([segue.identifier isEqualToString:@"fullImageSegue"]) {
+        FullImageViewController *controller = [segue destinationViewController];
+        MKPinAnnotationView *pin = sender;
+        PhotoAnnotation *annotation = (PhotoAnnotation*)pin.annotation;
+        controller.photo = annotation.photo;
     }
 }
 
@@ -85,7 +92,7 @@
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.floatValue, longitude.floatValue);
     PhotoAnnotation *point = [[PhotoAnnotation alloc] init];
     point.coordinate = coordinate;
-    point.photo = [self resizeImage:self.selectedImage withSize:CGSizeMake(50.0, 50.0)];
+    point.photo = self.selectedImage;
     [self.mapView addAnnotation:point];
     
     // Pop back
@@ -98,12 +105,17 @@
         annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
         annotationView.canShowCallout = true;
         annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+        annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = [(PhotoAnnotation*)annotation photo];
+    imageView.image = [self resizeImage:((PhotoAnnotation*)annotation).photo withSize:CGSizeMake(50.0, 50.0)];
     
     return annotationView;
+}
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    [self performSegueWithIdentifier:@"fullImageSegue" sender:view];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
