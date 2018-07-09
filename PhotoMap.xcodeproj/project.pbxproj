@@ -17,6 +17,7 @@
 		6A22E5FB20F2A4A00052F3C6 /* LocationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A22E5FA20F2A4A00052F3C6 /* LocationsViewController.m */; };
 		6A22E5FE20F2A4AE0052F3C6 /* FullImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A22E5FD20F2A4AE0052F3C6 /* FullImageViewController.m */; };
 		6A22E60020F2D7E20052F3C6 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A22E5FF20F2D7E20052F3C6 /* MapKit.framework */; };
+		6A22E60320F323320052F3C6 /* PhotoAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A22E60220F323320052F3C6 /* PhotoAnnotation.m */; };
 		A81105B65E41CA038B04C843 /* libPods-PhotoMap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7CBCF83EE4466FF76810F69 /* libPods-PhotoMap.a */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,8 @@
 		6A22E5FC20F2A4AE0052F3C6 /* FullImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullImageViewController.h; sourceTree = "<group>"; };
 		6A22E5FD20F2A4AE0052F3C6 /* FullImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullImageViewController.m; sourceTree = "<group>"; };
 		6A22E5FF20F2D7E20052F3C6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6A22E60120F323320052F3C6 /* PhotoAnnotation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoAnnotation.h; sourceTree = "<group>"; };
+		6A22E60220F323320052F3C6 /* PhotoAnnotation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhotoAnnotation.m; sourceTree = "<group>"; };
 		B7CBCF83EE4466FF76810F69 /* libPods-PhotoMap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PhotoMap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -95,6 +98,8 @@
 				6A22E5EA20F2A3DA0052F3C6 /* main.m */,
 				6A22E5F420F2A4570052F3C6 /* View Controllers */,
 				6A22E5F820F2A47D0052F3C6 /* Views */,
+				6A22E60120F323320052F3C6 /* PhotoAnnotation.h */,
+				6A22E60220F323320052F3C6 /* PhotoAnnotation.m */,
 			);
 			path = PhotoMap;
 			sourceTree = "<group>";
@@ -226,6 +231,7 @@
 				6A22E5F320F2A41B0052F3C6 /* PhotoMapViewController.m in Sources */,
 				6A22E5FB20F2A4A00052F3C6 /* LocationsViewController.m in Sources */,
 				6A22E5FE20F2A4AE0052F3C6 /* FullImageViewController.m in Sources */,
+				6A22E60320F323320052F3C6 /* PhotoAnnotation.m in Sources */,
 				6A22E5F720F2A4790052F3C6 /* LocationCell.m in Sources */,
 				6A22E5DD20F2A3D90052F3C6 /* AppDelegate.m in Sources */,
 			);

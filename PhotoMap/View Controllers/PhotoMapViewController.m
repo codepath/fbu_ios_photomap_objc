@@ -8,6 +8,7 @@
 
 #import "PhotoMapViewController.h"
 #import "LocationsViewController.h"
+#import "PhotoAnnotation.h"
 @import MapKit;
 
 @interface PhotoMapViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationsViewControllerDelegate, MKMapViewDelegate>
@@ -82,9 +83,9 @@
     
     // Add a pin to the map
     CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.floatValue, longitude.floatValue);
-    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    PhotoAnnotation *point = [[PhotoAnnotation alloc] init];
     point.coordinate = coordinate;
-    point.title = @"Picture!";
+    point.photo = [self resizeImage:self.selectedImage withSize:CGSizeMake(50.0, 50.0)];
     [self.mapView addAnnotation:point];
     
     // Pop back
@@ -100,9 +101,23 @@
     }
     
     UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
-    imageView.image = [UIImage imageNamed:@"camera"];
+    imageView.image = [(PhotoAnnotation*)annotation photo];
     
     return annotationView;
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 @end
