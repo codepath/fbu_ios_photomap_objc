@@ -10,7 +10,7 @@
 #import "LocationsViewController.h"
 @import MapKit;
 
-@interface PhotoMapViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationsViewControllerDelegate>
+@interface PhotoMapViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate, LocationsViewControllerDelegate, MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) UIImage *selectedImage;
@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.mapView.delegate = self;
     
     //one degree of latitude is approximately 111 kilometers (69 miles) at all times.
     MKCoordinateRegion sfRegion = MKCoordinateRegionMake(CLLocationCoordinate2DMake(37.783333, -122.416667), MKCoordinateSpanMake(0.1, 0.1));
@@ -79,8 +80,29 @@
 
 - (void)locationsViewController:(LocationsViewController *)controller didPickLocationWithLatitude:(NSNumber *)latitude longitude:(NSNumber *)longitude {
     
+    // Add a pin to the map
+    CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(latitude.floatValue, longitude.floatValue);
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = coordinate;
+    point.title = @"Picture!";
+    [self.mapView addAnnotation:point];
+    
     // Pop back
     [self.navigationController popViewControllerAnimated:true];
+}
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:@"Pin"];
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"Pin"];
+        annotationView.canShowCallout = true;
+        annotationView.leftCalloutAccessoryView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+    }
+    
+    UIImageView *imageView = (UIImageView*)annotationView.leftCalloutAccessoryView;
+    imageView.image = [UIImage imageNamed:@"camera"];
+    
+    return annotationView;
 }
 
 @end
